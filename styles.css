@@ -1,0 +1,203 @@
+@font-face {
+    font-family: 'KenVector Future';
+    src: url('assets/text/sh.ttf') format('truetype');
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background: url('assets/backgroun/back.jpg') no-repeat center center fixed;
+    background-size: cover;
+    overflow: hidden;
+    cursor: none;
+    font-family: 'KenVector Future', sans-serif;
+}
+
+#menu-screen {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+#top-title {
+    font-size: 72px;
+    margin-bottom: 10px;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+#bottom-title {
+    font-size: 36px;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+    margin-bottom: 50px;
+}
+
+#start-button {
+    font-size: 24px;
+    padding: 15px 40px;
+    background: rgba(255, 255, 255, 0.2);
+    border: 2px solid white;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: 'KenVector Future', sans-serif;
+}
+
+#start-button:hover {
+    background: rgba(255, 255, 255, 0.4);
+    transform: scale(1.1);
+}
+
+#instructions {
+    font-size: 18px;
+    margin-top: 20px;
+    color: white;
+    text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+    opacity: 0.9;
+}
+
+#game-container {
+    width: 800px;
+    height: 600px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.3);
+    border: 2px solid white;
+    overflow: hidden;
+    transition: filter 0.3s ease;
+    will-change: filter;
+}
+
+#game-area {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+#hud {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 1000;
+    color: white;
+    font-size: 24px;
+    text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
+
+#health-container {
+    margin-top: 10px;
+    width: 200px;
+}
+
+.bar-container {
+    position: relative;
+    height: 20px;
+    background: rgba(0, 0, 0, 0.3);
+    border: 2px solid white;
+    border-radius: 10px;
+    margin-top: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+}
+
+#health-bar {
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.2);
+    position: relative;
+}
+
+#health-damage-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #2ecc71;
+    transition: width 0.3s ease;
+}
+
+#overdose-bar {
+    width: 0%;
+    height: 100%;
+    background: #3498db;
+    transition: width 0.3s ease;
+}
+
+.game-object {
+    position: absolute;
+    pointer-events: none;
+    transition: transform 0.2s ease;
+}
+
+#custom-cursor {
+    position: fixed;
+    pointer-events: none;
+    z-index: 9999;
+    transition: transform 0.1s ease;
+    transform-origin: center;
+}
+
+.floating-text {
+    position: absolute;
+    color: white;
+    font-size: 24px;
+    font-family: 'KenVector Future', sans-serif;
+    pointer-events: none;
+    animation: floatAndFade 1s ease-out forwards;
+    text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+    z-index: 1001;
+}
+
+.floating-text.score {
+    color: #2ecc71;
+}
+
+.floating-text.heal {
+    color: #3498db;
+}
+
+.floating-text.damage {
+    color: #e74c3c;
+}
+
+.floating-text.speed {
+    color: #f1c40f;
+    font-size: 28px;
+    animation: speedFloat 1.5s ease-out forwards;
+}
+
+@keyframes floatAndFade {
+    0% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-30px);
+        opacity: 0;
+    }
+}
+
+@keyframes speedFloat {
+    0% {
+        transform: scale(0.8) translateY(0);
+        opacity: 0;
+    }
+    20% {
+        transform: scale(1.2) translateY(-10px);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1) translateY(-40px);
+        opacity: 0;
+    }
+}
+
+.rgb-split-active {
+    filter: url("#rgb-split") !important;
+}

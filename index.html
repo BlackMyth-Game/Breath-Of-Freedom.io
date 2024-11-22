@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Black Myth: Breath of Freedom</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="menu-screen">
+        <div id="top-title">Black Myth:</div>
+        <div id="bottom-title">Breath of Freedom</div>
+        <button id="start-button">ENTER to start</button>
+        <p id="instructions">Use arrow keys to catch food and avoid threats</p>
+    </div>
+    <div id="game-container" style="display: none;">
+        <div id="hud">
+            <div id="score">Score: <span id="score-value">0</span></div>
+            <div id="health-container">
+                Health:
+                <div class="bar-container">
+                    <div id="health-bar"></div>
+                    <div id="health-damage-overlay"></div>
+                </div>
+                Overdose:
+                <div class="bar-container">
+                    <div id="overdose-bar"></div>
+                </div>
+            </div>
+        </div>
+        <div id="game-area"></div>
+    </div>
+    <audio id="background-music" loop>
+        <source src="assets/music/mus.mp3" type="audio/mp3">
+    </audio>
+    <script src="config.js"></script>
+    <script src="ScreenEffects.js"></script>
+    <script src="GameEngine.js"></script>
+    <script src="GameUI.js"></script>
+</body>
+</html>
