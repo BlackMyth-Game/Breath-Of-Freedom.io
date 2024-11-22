@@ -268,9 +268,15 @@ class ScreenEffects {
                 clearInterval(this.updateInterval);
             }
 
-            if (this.redLayer) this.redLayer.remove();
-            if (this.greenLayer) this.greenLayer.remove();
-            if (this.blueLayer) this.blueLayer.remove();
+            const layers = [this.redLayer, this.greenLayer, this.blueLayer];
+            layers.forEach(layer => {
+                if (layer) {
+                    while (layer.firstChild) {
+                        layer.firstChild.remove();
+                    }
+                    layer.remove();
+                }
+            });
             
             this.element.classList.remove('rgb-split-container');
             this.element.style.removeProperty('--split-x-red');

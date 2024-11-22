@@ -10,7 +10,7 @@ const gameConfig = {
     cursor: {
         scale: 0.8,
         position: {
-            bottom: 100,
+            bottom: 70,
             initialX: 400
         },
         assets: {
@@ -30,9 +30,9 @@ const gameConfig = {
     health: {
         maxHealth: 100,
         overdose: {
-            decreaseRate: 7,      // Amount to decrease per second
+            decreaseRate: 5,      // Amount to decrease per second
             decreaseInterval: 100, // Check every 100ms
-            increaseAmount: 25,    // Amount to increase when catching heal
+            increaseAmount: 30,    // Amount to increase when catching heal
             // New settings for effect scaling
             minEffectThreshold: 10 // Minimum overdose percentage needed for effects to start
         }
@@ -76,9 +76,9 @@ const gameConfig = {
         },
         dodge: {
             asteroid: {
-                scale: 0.2,
+                scale: 0.16,
                 reactionScale: 1.3,
-                damage: 20,
+                damage: 16,
                 speedRange: { min: 3, max: 7 },
                 assets: {
                     image: 'assets/dodge/asteroid/image.png',
@@ -89,7 +89,7 @@ const gameConfig = {
             meteor: {
                 scale: 0.6,
                 reactionScale: 1.3,
-                damage: 25,
+                damage: 20,
                 speedRange: { min: 3, max: 7 },
                 assets: {
                     image: 'assets/dodge/meteor/image.png',
@@ -101,6 +101,7 @@ const gameConfig = {
     },
     spawn: {
         initialInterval: 1000,
+        catchInitialInterval: 1500,
         minimumInterval: 500,
         intervalDecrease: 5
     },
